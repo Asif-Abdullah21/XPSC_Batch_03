@@ -107,3 +107,60 @@ class Solution{
 };
 
 */
+
+/*
+
+//problem 04: Longest Distinct characters in string
+
+//{ Driver Code Starts
+#include<bits/stdc++.h>
+using namespace std;
+int longestSubstrDistinctChars (string S);
+int main()
+{
+    int t; cin >> t;
+    while (t--)
+    {
+        string S; cin >> S;
+
+        cout << longestSubstrDistinctChars (S) << endl;
+    }
+}
+
+// Contributed By: Pranay Bansal
+
+// } Driver Code Ends
+
+
+
+int longestSubstrDistinctChars (string s)
+{
+        int mx = -1;
+        int freq[26] = {0};
+        
+        int i=0,j=0,unique=0;
+        
+        while(j<s.size())
+        {
+            freq[s[j]-'a']++;
+            if(freq[s[j]-'a']==1) unique++;
+            
+            while(freq[s[j]-'a']>1)
+            {
+                freq[s[i]-'a']--;
+                if(freq[s[i]-'a']==0) unique--;
+                i++;
+            }
+            
+            cout << unique << " ";
+            
+            mx = max(mx,unique);
+            
+            j++;
+    }
+    
+    return mx;
+}
+
+
+*/

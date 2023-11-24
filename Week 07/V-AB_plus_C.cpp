@@ -17,6 +17,8 @@
     cout.tie(0);
 using namespace std;
 
+ll N = 1e6;
+
 int main()
 {
     FIO;
@@ -25,16 +27,18 @@ int main()
 
     while (t--)
     {
-        int n; cin >> n;
+        ll n; cin >> n;
 
         if(n==1) cout << -1 << endl;
-        else if(n%2==0)
+        else if(n<=N)
         {
-            if(n==2) cout << 1 << " " << 1 << " " << 1 << endl;
-            else cout << 2 << " " << (n/2)-1 << " " << 2 << endl;
+            cout << 1 << " " << n-1 << " " << 1 << endl;
+        }
+        else if(n%N==0){
+            cout << (n/N)-1 << " " << N << " " << N << endl;
         }
         else{
-            cout << 2 << " " << (n/2) << " " << 1 << endl;
+            cout << (n/N) << " " << N << " " << (n%N) << endl;
         }
     }
      
